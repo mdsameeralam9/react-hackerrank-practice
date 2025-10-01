@@ -17,6 +17,8 @@ function countResponseTimeRegressions(responseTimes) {
 }
 console.log(countResponseTimeRegressions([100, 200, 150,300]));
 
+//-------------------------------------Day 1 End---------------------------------------
+
 // 2. isAlphabeticPalindrome
 function isAlphabeticPalindrome(code) {
     // Write your code here
@@ -32,6 +34,7 @@ function isAlphabeticPalindrome(code) {
 }
 console.log(isAlphabeticPalindrome("A1b2B!a"));
 
+//-------------------------------------Day 2 End---------------------------------------
 // 3. firstMissingPositive_sort
 // Simple: slower due to sort
 function firstMissingPositive_sort1(nums) {
@@ -96,9 +99,5 @@ function firstMissingPositive_set4(arr){
   return arr.length+1;
 }
 
-
 console.log(firstMissingPositive_set4([3,3,1,2,3, 4, -1, 12]));
-
-
-console.log(firstMissingPositive_sort([3, 4, -1, 1]));
-
+//-------------------------------------Day 3 End---------------------------------------
