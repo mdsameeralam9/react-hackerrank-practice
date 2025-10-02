@@ -130,3 +130,5 @@ function isNonIdenticalRotation3(s1, s2) {
 // console.log(3, isNonIdenticalRotation3("e", "r")); // false
 // console.log(4, isNonIdenticalRotation3("ab", "ac")); // false
 //console.log(5, isNonIdenticalRotation3("geeks for geeks", "for geeks geeks")); //false
+
+//-------------------------------------Day 4 End---------------------------------------
