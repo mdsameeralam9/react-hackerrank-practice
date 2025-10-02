@@ -101,3 +101,32 @@ function firstMissingPositive_set4(arr){
 
 console.log(firstMissingPositive_set4([3,3,1,2,3, 4, -1, 12]));
 //-------------------------------------Day 3 End---------------------------------------
+
+// 4. isNonTrivialRotation
+// rotate each char from 0 index to last of String and compare from each rotation from second strin
+// ie both are same at any point then return true or false
+function isNonTrivialRotation1(s, t) {
+  return s.length === t.length && (s + s).includes(t);
+}
+
+function isNonTrivialRotation2(s, t) {
+  if (s.length !== t.length) return false; 
+  const n = s.length;
+  for (let k = 0; k < n; k++) {
+    const rot = s.slice(k) + s.slice(0, k); 
+    if (rot === t) return true;
+  }
+  return false;
+}
+
+function isNonIdenticalRotation3(s1, s2) {
+  if (s1.length !== s2.length) return 0;         
+  if (s1 === s2) return 0;                     
+  const doubled = s1 + s1;                       
+  return doubled.includes(s2) ? 1 : 0;     
+}
+// console.log(1, isNonIdenticalRotation3("abcd", "cdab")); // true
+// console.log(2, isNonIdenticalRotation3("abcde", "cdeab")); // true
+// console.log(3, isNonIdenticalRotation3("e", "r")); // false
+// console.log(4, isNonIdenticalRotation3("ab", "ac")); // false
+//console.log(5, isNonIdenticalRotation3("geeks for geeks", "for geeks geeks")); //false
