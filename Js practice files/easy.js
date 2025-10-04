@@ -176,3 +176,30 @@ function findFirstOccurrence(nums, target) {
 }
 
 //-------------------------------------Day 5 End---------------------------------------
+// maximizeNonOverlappingMeetings 
+// soltion for sort the sub arr from from endTime or second Value
+// declare var for count and endTime initial with -value
+// now use loop and get current value- get start and endTime
+// compare start >= end => count++=> 1st count count++ after that make end to endTime Variable to
+// comapre with next start time
+function maximizeNonOverlappingMeetings(meetings) {
+  if (!Array.isArray(meetings) || meetings.length === 0) return 0;
+  // need sorting so we can come to know which meeting ends first 
+  // so we count the meet without overlappings
+  meetings.sort((a, b) => a[1] - b[1]);
+
+  let count = 0;
+  let lastEnd = -Infinity; // for keep track for end time
+
+  for (let i = 0; i < meetings.length; i++) {
+    const [start, end] = meetings[i];
+    if (start >= lastEnd) {
+      count++;
+      lastEnd = end;
+    }
+  }
+
+  return count;
+}
+
+console.log(maximizeNonOverlappingMeetings([[1, 3], [2, 4], [5, 7], [6, 8]])); // 2
