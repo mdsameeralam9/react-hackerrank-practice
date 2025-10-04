@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 const OMITTED_WORDS = ["a", "the", "and", "or", "but"];
 
@@ -20,7 +20,7 @@ function WordOmitter() {
   };
 
   const getProcessedText = (inputText) => {
-    if (!inputText) return "";
+    if (!inputText.trim()) return "";
     // TODO: Add your changes here;
     inputText = inputText.split(" ");
     let result = "";
@@ -32,6 +32,8 @@ function WordOmitter() {
     }
     return result;
   };
+
+  const optimisedOmitedText = useMemo(() => getProcessedText(inputText), [inputText])
 
   return (
     <div className="layout-column align-items-center mx-auto">
@@ -54,7 +56,7 @@ function WordOmitter() {
         <div>
           <h2>Output:</h2>
           <p data-testid="output-text">
-            {omitWords ? inputText : getProcessedText(inputText)}
+            {omitWords ? inputText : optimisedOmitedText}
           </p>
         </div>
       </div>
