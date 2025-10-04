@@ -1,19 +1,29 @@
-function maximizeNonOverlappingMeetings(meetings) {
-  // need sorting so we can come to know which meeting ends first 
-  // so we count the meet without overlappings
- meetings = meetings.sort((a,b) => a[1]-b[1]);
-  let count = 0;
-  let lastEnd = -1;
+function areBracketsProperlyMatched(code_snippet) {
+  // Write your code here
+  let bracketsObj = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
 
-  for(const meet of meetings){
-    const [start,end] = meet;
-    if(start >=lastEnd) {
-      count++;
-      lastEnd = end;
+  let stack = [];
+
+  for (const char of code_snippet) {
+    if ([")", "(", "{", "}", "[", "]"].includes(char)) {
+      if (bracketsObj[char]) {
+        if (bracketsObj[char] !== stack.pop()) {
+          return false;
+        }
+      } else {
+        stack.push(char);
+      }
     }
   }
 
-  return count
+  return stack.length === 0;
 }
-
-console.log(maximizeNonOverlappingMeetings([[1, 3], [2, 4], [5, 7], [6, 8]])); // 2
+code_snippet = "if (a[0] > b[1]) { doSomething(); }";
+console.log(areBracketsProperlyMatched("()"));
+console.log(areBracketsProperlyMatched("("));
+console.log(areBracketsProperlyMatched("() {} []"));
+console.log(areBracketsProperlyMatched(code_snippet));
