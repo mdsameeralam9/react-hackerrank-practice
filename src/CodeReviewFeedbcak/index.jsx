@@ -26,35 +26,39 @@ export default function FeedbackSystem() {
   const items = useMemo(() => KEYS.map((k) => state[k]), [state]);
 
   return (
-    <div className="my-0 mx-auto text-center w-mx-1200">
-      <div className="flex wrap justify-content-center mt-30 gap-30">
+    <div className="max-w-6xl mx-auto">
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6">Code Review Feedback</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item, index) => (
-          <div className="pa-10 w-300 card" key={item.key} style={{border: "1px solid"}}>
-            <h2>{item.label}</h2>
-            <div className="flex my-30 mx-0 justify-content-around">
+          <div className="bg-white border border-gray-200 rounded-lg p-6" key={item.key}>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4 text-center">{item.label}</h2>
+            
+            <div className="flex justify-center gap-3 mb-4">
               <button
-              style={{border: "1px solid"}}
-                className="py-10 px-15"
+                className="px-4 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors"
                 data-testid={`upvote-btn-${index}`}
                 onClick={() => update(item.key, true)}
               >
                 👍 Upvote
               </button>
               <button
-              style={{border: "1px solid"}}
-                className="py-10 px-15 danger"
+                className="px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors"
                 data-testid={`downvote-btn-${index}`}
                 onClick={() => update(item.key, false)}
               >
                 👎 Downvote
               </button>
             </div>
-            <p className="my-10 mx-0" data-testid={`upvote-count-${index}`}>
-              Upvotes: <strong>{item.upvote}</strong>
-            </p>
-            <p className="my-10 mx-0" data-testid={`downvote-count-${index}`}>
-              Downvotes: <strong>{item.downvote}</strong>
-            </p>
+            
+            <div className="space-y-2 text-center text-sm">
+              <p className="text-gray-600" data-testid={`upvote-count-${index}`}>
+                Upvotes: <span className="font-semibold text-green-600">{item.upvote}</span>
+              </p>
+              <p className="text-gray-600" data-testid={`downvote-count-${index}`}>
+                Downvotes: <span className="font-semibold text-red-600">{item.downvote}</span>
+              </p>
+            </div>
           </div>
         ))}
       </div>
