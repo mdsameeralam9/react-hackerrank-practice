@@ -34,26 +34,29 @@ function WordOmitter() {
   };
 
   return (
-    <div className="omitter-wrapper">
-      <textarea
-        placeholder="Type here..."
-        value={inputText}
-        onChange={handleInputChange}
-        data-testid="input-area"
-      />
-      <div>
-        <button onClick={toggleOmitWords} data-testid="action-btn">
-          {!omitWords ? "Show All Words" : "Omit Words"}
-        </button>
-        <button onClick={clearFields} data-testid="clear-btn">
-          Clear
-        </button>
-      </div>
-      <div>
-        <h2>Output:</h2>
-        <p data-testid="output-text">
-          {omitWords ? inputText : getProcessedText(inputText)}
-        </p>
+    <div className="layout-column align-items-center mx-auto">
+      <h1>Word Omitter</h1>
+      <div className="omitter-wrapper">
+        <textarea
+          placeholder="Type here..."
+          value={inputText}
+          onChange={handleInputChange}
+          data-testid="input-area"
+        />
+        <div>
+          <button onClick={toggleOmitWords} data-testid="action-btn">
+            {!omitWords ? "Show All Words" : "Omit Words"}
+          </button>
+          <button onClick={clearFields} data-testid="clear-btn">
+            Clear
+          </button>
+        </div>
+        <div>
+          <h2>Output:</h2>
+          <p data-testid="output-text">
+            {omitWords ? inputText : getProcessedText(inputText)}
+          </p>
+        </div>
       </div>
     </div>
   );

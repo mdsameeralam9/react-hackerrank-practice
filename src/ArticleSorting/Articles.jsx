@@ -1,6 +1,6 @@
 
 
-function Articles({ articles = [] }) {
+function Articles({ sortedArticles = [] }) {
   return (
     <div className="card w-50 mx-auto">
       <table>
@@ -12,7 +12,7 @@ function Articles({ articles = [] }) {
           </tr>
         </thead>
         <tbody>
-          {articles.map(item => (
+          {sortedArticles.map(item => (
             <tr data-testid="article" key={`article-index ${item.title}`}>
               <td data-testid="article-title">{item.title}</td>
               <td data-testid="article-upvotes">{item.upvotes}</td>

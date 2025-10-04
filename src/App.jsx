@@ -1,6 +1,6 @@
 import CryptoExchanger from "./CryptoExchanger_Day_1/CryptoExchanger"
-import ArticleSorting from "./ArticleSorting/ArticleSorting"
-import WordOmitter from "./WordOmitter/WordOmitter"
+import ArticleSorting from "./ArticleSorting/index"
+import WordOmitter from "./WordOmitter/index"
 function App() {
   return (
     <>

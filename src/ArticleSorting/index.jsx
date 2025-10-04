@@ -1,11 +1,12 @@
 import { useState, useCallback, useEffect } from "react";
+import { ARTICLES_DATA } from "./articlesData";
 import Articles from "./Articles";
 
 const sortByVote = (arr = []) => [...arr].sort((a, b) => b.upvotes - a.upvotes);
 const sortByRecent = (arr = []) =>
   [...arr].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-function ArticleSorting({ articles }) {
+function ArticleSorting({ articles = ARTICLES_DATA }) {
   const [data, setData] = useState([]);
 
   // init once; if articles can change later, add [articles] and re-sort
@@ -22,8 +23,8 @@ function ArticleSorting({ articles }) {
   }, []);
 
   return (
-    <>
-      <h8k-navbar header="Sorting Articles"></h8k-navbar>
+    <div className="layout-column align-items-center mx-auto">
+      <h1>Sorting Articles</h1>
       <div className="App">
         <div className="layout-row align-items-center justify-content-center my-20 navigation">
           <label className="form-hint mb-0 text-uppercase font-weight-light">
@@ -44,9 +45,9 @@ function ArticleSorting({ articles }) {
             Most Recent
           </button>
         </div>
-        <Articles articles={data} />
+        <Articles sortedArticles={data} />
       </div>
-    </>
+    </div>
   );
 }
 
