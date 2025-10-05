@@ -203,3 +203,43 @@ function maximizeNonOverlappingMeetings(meetings) {
 }
 
 console.log(maximizeNonOverlappingMeetings([[1, 3], [2, 4], [5, 7], [6, 8]])); // 2
+
+// solution: areBracketsProperlyMatched
+// 1. define "bracketsObj" so can hold opening value and key and end value
+// 2. stack to hold openeing value and clear this at when we found end value
+// 3. loop to iterate each word and check if closing bracket so can remove elem from stack and match the end, if not then return
+// 4. push in stack for each opening value only and while compare get last value so compare and pop arr 
+function areBracketsProperlyMatched(code_snippet) {
+  // Write your code here
+  //  //Space complexity: O(1) for look-up
+  let bracketsObj = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+
+  let stack = []; //Space complexity: O(n)
+
+  // Time complexity: O(n)
+  for (const char of code_snippet) {
+    if ([")", "(", "{", "}", "[", "]"].includes(char)) {
+      if (bracketsObj[char]) {
+        if (bracketsObj[char] !== stack.pop()) {
+          return false;
+        }
+      } else {
+        stack.push(char);
+      }
+    }
+  }
+
+  // return stack.length === 0 ? 1 : 0; 
+  return stack.length === 0;
+}
+console.log(areBracketsProperlyMatched("if (a[0] > b[1]) { doSomething(); }")); // 1
+console.log(areBracketsProperlyMatched("int x = 42; // no brackets here"));     // 1
+console.log(areBracketsProperlyMatched("() {} []"));                            // 1
+console.log(areBracketsProperlyMatched("([)]"));                                 // 0
+console.log(areBracketsProperlyMatched("(]"));                                   // 0
+// Time complexity: O(n) and Space complexity: O(n)
+//-------------------------------------Day 6 End---------------------------------------
