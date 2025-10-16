@@ -19,8 +19,6 @@ const DiceRoller = () => {
     setDice(arr);
   };
 
-  console.log(dice);
-
   return (
     <div className="diceGameWrapper">
       <div className="Slider">
