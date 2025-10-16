@@ -5,7 +5,16 @@ import "./style.css";
 const DiceRoller = () => {
   const [dice, setDice] = useState([]);
   const [numberOfDice, setNumberOfDice] = useState(1);
+  const [historyDice, setHistoryDice] = useState([]);
   const diceIcons = [Dice1, Dice2, Dice3, Dice4, Dice5, Dice6];
+  const diceValue = {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+  };
 
   const rollDice = () => {
     let randomIndex = 0;
@@ -17,6 +26,7 @@ const DiceRoller = () => {
       count++;
     }
     setDice(arr);
+    setHistoryDice((p) => [...p, { value: arr.reduce((t, c) => t + diceValue[String(c)], 0)}]);
   };
 
   return (
@@ -60,17 +70,19 @@ const DiceRoller = () => {
         <button onClick={rollDice}>Roll Dice</button>
       </div>
 
-      <div className="history">
-        <h2>Roll History</h2>
-        <div className="hisList">
-          {[1, 2, 3].map((i) => (
-            <div className="card">
-              <span>1</span>
-              <span>2</span>
-            </div>
-          ))}
+      {historyDice.length > 0 && (
+        <div className="history">
+          <h2>Roll History</h2>
+          <div className="hisList">
+            {historyDice.map((val, i) => (
+              <div className="card">
+                <span>{i + 1}</span>
+                <span>{val.value}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
