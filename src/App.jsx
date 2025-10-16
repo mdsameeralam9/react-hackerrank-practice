@@ -3,12 +3,14 @@ import CryptoExchanger from "./CryptoExchanger_Day_1/CryptoExchanger.jsx"
 import ArticleSorting from "./ArticleSorting/index.jsx"
 import WordOmitter from "./WordOmitter/index.jsx"
 import FeedbackSystem from "./CodeReviewFeedbcak/index.jsx"
+import DiceRoller from "./DiceRoller/DiceRoller"
 
 const components = [
   { name: 'CryptoExchanger', component: CryptoExchanger, path: '/crypto' },
   { name: 'ArticleSorting', component: ArticleSorting, path: '/articles' },
   { name: 'WordOmitter', component: WordOmitter, path: '/word-omitter' },
-  { name: 'FeedbackSystem', component: FeedbackSystem, path: '/feedback' }
+  { name: 'FeedbackSystem', component: FeedbackSystem, path: '/feedback' },
+  { name: 'DiceRoller', component: DiceRoller, path: '/dice'}
 ]
 
 function Layout() {

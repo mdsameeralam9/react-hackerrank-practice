@@ -1,0 +1,56 @@
+.diceGameWrapper{
+    padding: 1rem 4rem;
+}
+.diceWrapper{
+    display: flex;
+    border: 2px dotted;
+       justify-content: center;
+       align-items: center;
+       gap: 1rem;
+       padding: 3rem 0;
+}
+
+.Slider{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.Slider > input{
+    width: 100%;
+}
+
+.btnwrap{
+    display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 1rem 
+}
+
+button{
+        background: navy;
+    color: white;
+    padding: 8px 6rem;
+    border: none;
+    cursor: pointer;
+}
+
+.imgWrap{
+    width: 40px;
+     height: 40px;
+}
+
+.hisList{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 2px solid;
+    padding: 1rem;
+}
+
+.card{
+    border: 1px solid;
+    padding: 2px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+}
