@@ -5,7 +5,8 @@
   b. Component label spliting 
   c. Import On Interaction, 
   d. Import On Visibility
-   - https://www.patterns.dev/vanilla/bundle-splitting/
+   - https://www.youtube.com/watch?v=zAEy0jchvH8&t=3042s
+   
   
 3. Prefetch and Preload
 4. Tree Shaking
@@ -15,6 +16,60 @@
 8.  optimisation with React hooks(useMemo, useCallbcak, memo, lazy, suspense, Componeny otimisation with hooks state, and componet rules to follow for optimsation, etc...)
 9.  List optimisation - Pagination(Frontend/backend), Infnite Scroll, Virtual List, key props, 
 
+
+# Sources of learing
+Code Splitting
+1. https://www.patterns.dev/vanilla/bundle-splitting/
+2. https://javascriptpatterns.vercel.app/patterns/performance-patterns/introduction
+3. https://dev.to/franklin030601/code-splitting-in-react-js-4o2g
+
+Compression
+1. https://www.digitalocean.com/communit...
+2. https://www.digitalocean.com/communit...
+3.   / setup-react-with-webpack-and-babel  
+4. https://stackoverflow.com/questions/6...
+5. https://dev.to/uguremirmustafa/how-to...
+
+Import on interaction
+1. https://www.patterns.dev/vanilla/impo...
+
+Import on visibility
+1. https://www.patterns.dev/vanilla/impo...
+2. https://javascriptpatterns.vercel.app...
+
+Prefetch
+1. https://www.patterns.dev/vanilla/impo...
+2. https://javascriptpatterns.vercel.app...
+3. https://www.patterns.dev/vanilla/pref...
+
+Preload
+1. https://webpack.js.org/guides/code-sp...
+2. https://javascriptpatterns.vercel.app...
+3. https://www.patterns.dev/vanilla/preload
+4. https://www.npmjs.com/package/preload...
+5. https://github.com/vuejs/preload-webp...
+
+Tree Shaking:
+1. https://blog.saeloun.com/2022/11/24/t...
+2. https://webpack.js.org/guides/tree-sh...
+
+Virtual Lists:
+1. https://www.patterns.dev/vanilla/virt...
+
+Web Vitals & LCP
+1. https://web.dev/articles/vitals
+2. https://web.dev/articles/lcp
+3. https://www.smashingmagazine.com/2023...
+4. https://www.twicpics.com/blog/how-to-...
+
+INP
+1. https://web.dev/articles/inp
+2. https://www.remoterocketship.com/advi...
+3.   / what-is-interaction-to-next-paint-inp  
+
+CLS:
+1. https://web.dev/articles/cls
+2. https://web.dev/articles/optimize-cls
 
 # React Performance Optimization Handbook
 
