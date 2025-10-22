@@ -6,6 +6,7 @@ import FeedbackSystem from "./CodeReviewFeedbcak/index.jsx"
 import DiceRoller from "./DiceRoller/DiceRoller"
 import TimerWithRandom from "./RandomWithTimer/index"
 import CounterWithMyUseState from "./UseStatePollyfill/index"
+import DigitalClock from "./DigitalClock/index"
 
 const components = [
   { name: 'CryptoExchanger', component: CryptoExchanger, path: '/crypto' },
@@ -14,7 +15,8 @@ const components = [
   { name: 'FeedbackSystem', component: FeedbackSystem, path: '/feedback' },
   { name: 'DiceRoller', component: DiceRoller, path: '/dice'},
   { name: 'TimerWithRandom', component: TimerWithRandom, path: '/timer'},
-  {name: 'CounterWithMyUseState', component: CounterWithMyUseState, path: '/counter'}
+  {name: 'CounterWithMyUseState', component: CounterWithMyUseState, path: '/counter'},
+  {name: 'DigitalClock', component: DigitalClock, path: '/digitalClock'}
 ]
 
 function Layout() {
@@ -60,7 +62,7 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <div className="text-center py-16">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-4">React Components</h1>
+            <h1 className="text-2xl font-semibold text-gray-900 mb-4 text-red-500">React Components</h1>
             <p className="text-gray-600">Select a component from the sidebar to view the demo</p>
           </div>
         )

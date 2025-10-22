@@ -47,7 +47,7 @@ function DiceRoller2() {
 
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 mb-6">
           <div className="mb-8">
-            <label className="block text-white text-sm font-medium mb-3">
+            <label className="block text-sm font-medium mb-3">
               Number of Dice: {numDice}
             </label>
             <input
@@ -82,7 +82,7 @@ function DiceRoller2() {
                 >
                   <DiceIcon
                     size={80}
-                    className="text-white drop-shadow-lg"
+                    className=""
                     strokeWidth={1.5}
                   />
                 </div>
@@ -92,7 +92,7 @@ function DiceRoller2() {
 
           <div className="text-center mb-8">
             <div className="text-slate-400 text-sm mb-1">Total</div>
-            <div className="text-6xl font-bold text-white">{total}</div>
+            <div className="text-6xl font-bold ">{total}</div>
           </div>
 
           <button

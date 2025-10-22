@@ -34,16 +34,16 @@ export default function FeedbackSystem() {
           <div className="bg-white border border-gray-200 rounded-lg p-6" key={item.key}>
             <h2 className="text-lg font-semibold text-gray-900 mb-4 text-center">{item.label}</h2>
             
-            <div className="flex justify-center gap-3 mb-4">
+            <div className="flex justify-center gap-3 mb-4 flex-col">
               <button
-                className="px-4 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors"
+                className=" flex justify-center items-center px-4 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors"
                 data-testid={`upvote-btn-${index}`}
                 onClick={() => update(item.key, true)}
               >
                 👍 Upvote
               </button>
               <button
-                className="px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors"
+                className="flex justify-center items-center px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors"
                 data-testid={`downvote-btn-${index}`}
                 onClick={() => update(item.key, false)}
               >

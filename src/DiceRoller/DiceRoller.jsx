@@ -58,7 +58,7 @@ const DiceRoller = () => {
           return (
             <DiceIcon
               size={80}
-              className="text-white drop-shadow-lg"
+              className="drop-shadow-lg"
               strokeWidth={1.5}
               key={index}
             />
