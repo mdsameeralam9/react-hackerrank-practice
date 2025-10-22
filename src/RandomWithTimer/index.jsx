@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./style.css";
 
 function random() {
   let count = "";
@@ -33,6 +32,7 @@ const TimerWithRandom = () => {
         justifyContent: "center",
         alignItems: "center",
         gap: "1rem",
+        flexDirection: "column",
       }}
     >
       <h1>Timer With Code</h1>
@@ -42,7 +42,7 @@ const TimerWithRandom = () => {
           width: 160,
           height: 160,
           borderRadius: "50%",
-          background: `conic-gradient(#3498db ${angle}deg, #e0e0e0 0deg)`,
+          background: `conic-gradient(${second > 10 ? "#3498db" : "red"} ${angle}deg, #e0e0e0 0deg)`,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

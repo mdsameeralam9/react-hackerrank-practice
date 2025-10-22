@@ -4,13 +4,15 @@ import ArticleSorting from "./ArticleSorting/index.jsx"
 import WordOmitter from "./WordOmitter/index.jsx"
 import FeedbackSystem from "./CodeReviewFeedbcak/index.jsx"
 import DiceRoller from "./DiceRoller/DiceRoller"
+import TimerWithRandom from "./RandomWithTimer/index"
 
 const components = [
   { name: 'CryptoExchanger', component: CryptoExchanger, path: '/crypto' },
   { name: 'ArticleSorting', component: ArticleSorting, path: '/articles' },
   { name: 'WordOmitter', component: WordOmitter, path: '/word-omitter' },
   { name: 'FeedbackSystem', component: FeedbackSystem, path: '/feedback' },
-  { name: 'DiceRoller', component: DiceRoller, path: '/dice'}
+  { name: 'DiceRoller', component: DiceRoller, path: '/dice'},
+  { name: 'TimerWithRandom', component: TimerWithRandom, path: '/timer'}
 ]
 
 function Layout() {
