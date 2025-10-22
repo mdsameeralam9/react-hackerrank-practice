@@ -5,6 +5,7 @@ import WordOmitter from "./WordOmitter/index.jsx"
 import FeedbackSystem from "./CodeReviewFeedbcak/index.jsx"
 import DiceRoller from "./DiceRoller/DiceRoller"
 import TimerWithRandom from "./RandomWithTimer/index"
+import CounterWithMyUseState from "./UseStatePollyfill/index"
 
 const components = [
   { name: 'CryptoExchanger', component: CryptoExchanger, path: '/crypto' },
@@ -12,7 +13,8 @@ const components = [
   { name: 'WordOmitter', component: WordOmitter, path: '/word-omitter' },
   { name: 'FeedbackSystem', component: FeedbackSystem, path: '/feedback' },
   { name: 'DiceRoller', component: DiceRoller, path: '/dice'},
-  { name: 'TimerWithRandom', component: TimerWithRandom, path: '/timer'}
+  { name: 'TimerWithRandom', component: TimerWithRandom, path: '/timer'},
+  {name: 'CounterWithMyUseState', component: CounterWithMyUseState, path: '/counter'}
 ]
 
 function Layout() {
