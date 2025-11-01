@@ -22,7 +22,6 @@
 - useEffect Hook Polyfill
 - useRef
 - useContext
-- Light and Dark Mode Implementation
 - useReducer
 - useMemo and useCallback
 - useMemo Polyfill
@@ -50,6 +49,7 @@
 # Machine Coding Interview Questions
 
 - Todo List
+- Light and Dark Mode Implementation
 - Holy Grail Layout
 - Tabs
 - Accordion
