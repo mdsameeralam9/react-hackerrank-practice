@@ -5,11 +5,19 @@ const MyCustomUseEffect = () => {
   const [counter, setCounter] = useState(1);
 
   useEffect(() => {
-    console.log("useEffect called")
+    console.log("useEffect called");
+
+    return () => {
+      console.log("useEffect cleanup called")
+    }
   }, [counter])
 
   useEffectCustom(() => {
-    console.log("useEffectCustom called")
+    console.log("useEffectCustom called");
+
+    return () => {
+      console.log("useEffectCustom cleanup called")
+    }
   }, [counter])
 
   return (

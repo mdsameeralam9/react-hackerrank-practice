@@ -7,10 +7,21 @@ function checkIsDepChnaged(prev, current) {
 }
 
 export const useEffectCustom = (cb, dependency) => {
-  const deps = React.useRef();
+  const firstRender = React.useRef(true);
+  const deps = React.useRef([]);
+  if (firstRender.current) {
+    firstRender.current = false;
+    const cleanFn = cb();
+    if (cleanFn && typeof cleanFn === "function") {
+      cleanFn();
+    }
+  }
   const isDepsChanged = checkIsDepChnaged(deps, dependency);
   if (isDepsChanged) {
-    cb();
-    deps.current = dependency;
+    const cleanFn = cb();
+    if (cleanFn && typeof cleanFn === "function" && isDepsChanged) {
+      cleanFn();
+    }
   }
+  deps.current = dependency || [];
 };
