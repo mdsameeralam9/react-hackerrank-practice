@@ -1,7 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import { useEffectCustom } from "./useEffectCustom"
 
 const MyCustomUseEffect = () => {
   const [counter, setCounter] = useState(1);
+
+  useEffect(() => {
+    console.log("useEffect called")
+  }, [counter])
+
+  useEffectCustom(() => {
+    console.log("useEffectCustom called")
+  }, [counter])
+
   return (
     <div>
       <h1>MyCustomUseEffect</h1>
