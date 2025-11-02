@@ -67,7 +67,7 @@ These questions are designated as **Premium** in the sources and often focus on 
 | **Pixel Art** | Build a pixel art drawing tool where users can paint pixels with selected colors | |
 | **Undoable Counter** | Build a counter with a history of the values and ability to undo/redo actions | |
 | **Users Database** | Build a UI to filter, create, update, and delete users (CRUD functionality) | |
-| **Whack-A-Mole** | Build a popular arcade game where players attempt to hit moles as they pop up from holes in a board | |
+
 | **Memory Game** | Build a memory game where the player needs to match pairs of cards | |
 | **Auth Code Input** | Build an auth code input component that allows users to enter a 6-digit authorization code | |
 | **Progress Bars IV** | Build a list of progress bars that fill up gradually concurrently, up to a limit of 3 and allows for pausing and resuming | |
@@ -78,7 +78,9 @@ These questions are designated as **Premium** in the sources and often focus on 
 | **Selectable Cells** | Build an interface where users can drag to select multiple cells within a grid | |
 | **Tic-tac-toe II** | Build an N x N tic-tac-toe game that requires M consecutive marks to win | |
 | **Transfer List II** | Build a component that allows transferring of items between two lists, bulk selection/unselection of items, and adding of new items | |
+
 | **Wordle** | Build Wordle, the word-guessing game that took the world by storm | |
+| **Whack-A-Mole** | Build a popular arcade game where players attempt to hit moles as they pop up from holes in a board | |
 
 ***
 

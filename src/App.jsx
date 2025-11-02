@@ -14,6 +14,7 @@ import TimerWithRandom from "./RandomWithTimer/index";
 import CounterWithMyUseState from "./UseStatePollyfill/index";
 import DigitalClock from "./DigitalClock/index";
 import MyCustomUseEffect from "./useEffectPolyFill/index";
+import WordleGame from "./WordleGame/index";
 
 const components = [
   { name: "CryptoExchanger", component: CryptoExchanger, path: "/crypto" },
@@ -32,6 +33,11 @@ const components = [
     name: "My Custom UseEffect",
     component: MyCustomUseEffect,
     path: "/myCustomUseEffect",
+  },
+  {
+    name: "Wordle Game",
+    component: WordleGame,
+    path: "/wordleGame",
   },
 ];
 
