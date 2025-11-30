@@ -15,6 +15,8 @@ import CounterWithMyUseState from "./UseStatePollyfill/index";
 import DigitalClock from "./DigitalClock/index";
 import MyCustomUseEffect from "./useEffectPolyFill/index";
 import WordleGame from "./WordleGame/index";
+import Virtualisation from "./Virtualisation/index";
+import ProgressPattern from "./ProgressPattern/index"
 
 const components = [
   { name: "CryptoExchanger", component: CryptoExchanger, path: "/crypto" },
@@ -39,6 +41,16 @@ const components = [
     component: WordleGame,
     path: "/wordleGame",
   },
+  {
+    name: "Virtualisation",
+    component: Virtualisation,
+    path: "/virtualisation",
+  },
+  {
+    name: "Progress Pattern",
+    component: ProgressPattern,
+    path: "/progressPattern"
+  }
 ];
 
 function Layout() {
