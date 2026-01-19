@@ -16,7 +16,9 @@ import DigitalClock from "./DigitalClock/index";
 import MyCustomUseEffect from "./useEffectPolyFill/index";
 import WordleGame from "./WordleGame/index";
 import Virtualisation from "./Virtualisation/index";
-import ProgressPattern from "./ProgressPattern/index"
+import ProgressPattern from "./ProgressPattern/index";
+import PDFGenerator from "./ReactPdf/index";
+
 
 const components = [
   { name: "CryptoExchanger", component: CryptoExchanger, path: "/crypto" },
@@ -50,6 +52,11 @@ const components = [
     name: "Progress Pattern",
     component: ProgressPattern,
     path: "/progressPattern"
+  },
+   {
+    name: "PDF Generator",
+    component: PDFGenerator,
+    path: "/pDFGenerator"
   }
 ];
 

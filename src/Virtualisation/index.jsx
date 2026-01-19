@@ -1,63 +1,64 @@
-import React, { useMemo, useState } from "react";
+import { useState } from "react";
 
-const count = 10000;
-const ITEM_HEIGHT = 40;
+const ROW_HEIGHT = 40;
 const CONTAINER_HEIGHT = 300;
-const Virtualisation = () => {
-  const [scrollTp,setScrollTp] = useState(null);
-  const [scrollBtn,setScrollBtn] = useState(null);
-  const startIndex = 0;
-  const endIndex = 10;
-  const totalHeight = count * ITEM_HEIGHT;
+const OVERSCAN = 5;
 
-  // number of Item to display
-  const displayItem = Math.floor((CONTAINER_HEIGHT/ITEM_HEIGHT));
-  const endInd = scrollTp??0 + (displayItem+1)
+const getItems = () =>
+  [...Array(10000).keys()].map((i, index) => `item ${i}`) || [];
 
-  const data = useMemo(() => {
-    return [...Array(count).keys()]
-      .map((v) => v + 1)
-      .slice(scrollTp?? 0, endInd);
-  }, [scrollTp]);
+export default function Vitualisation({ items=getItems() }) {
+  const [scrollTop, setScrollTop] = useState(0);
 
-  const onScroll = (e) => {
-   const val = Math.floor((e.target.scrollTop/ITEM_HEIGHT)); 
-   const addBo = Math.ceil((e.target.scrollTop)); 
-   setScrollTp(val)
-   setScrollBtn(addBo)
-   console.log(e.target.scrollTop)
-  }
+  const totalHeight = items.length * ROW_HEIGHT;
 
+  const startIndex = Math.max(
+    0,
+    Math.floor(scrollTop / ROW_HEIGHT) - OVERSCAN
+  );
 
-  
+  const visibleCount =
+    Math.ceil(CONTAINER_HEIGHT / ROW_HEIGHT) + OVERSCAN * 2;
+
+  const endIndex = Math.min(
+    items.length - 1,
+    startIndex + visibleCount - 1
+  );
+
+  const visibleItems = items.slice(startIndex, endIndex + 1);
 
   return (
     <div
-      onScroll={onScroll}
       style={{
-        height: `${CONTAINER_HEIGHT}px`,
-        border: "1px solid #ccc",
+        height: CONTAINER_HEIGHT,
         overflowY: "auto",
-        position: "relative",
+        border: "1px solid #ccc"
       }}
+      onScroll={(e) => setScrollTop(e.target.scrollTop)}
     >
+      {/* Full height placeholder */}
       <div style={{ height: totalHeight, position: "relative" }}>
-        <ul
-        style={{
-            margin: 0,
-            padding: 0,
-            listStyle: "none",
-            transform: `translateY(${scrollBtn}px)`,
-          }}>
-          {data.map((v) => (
-            <li style={{ border: "1px solid", height: `${ITEM_HEIGHT}px` }}>
-              {v}
-            </li>
+        {/* Translated wrapper */}
+        <div
+          style={{
+            transform: `translateY(${startIndex * ROW_HEIGHT}px)`
+          }}
+        >
+          {visibleItems.map((item, index) => (
+            <div
+              key={startIndex + index}
+              style={{
+                height: ROW_HEIGHT,
+                padding: "8px",
+                borderBottom: "1px solid #eee",
+                boxSizing: "border-box"
+              }}
+            >
+              {item}
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Virtualisation;
+}
