@@ -18,6 +18,8 @@ import WordleGame from "./WordleGame/index";
 import Virtualisation from "./Virtualisation/index";
 import ProgressPattern from "./ProgressPattern/index";
 import PDFGenerator from "./ReactPdf/index";
+import DragAndDrop from "./DragAndDrop/index";
+
 
 
 const components = [
@@ -57,6 +59,11 @@ const components = [
     name: "PDF Generator",
     component: PDFGenerator,
     path: "/pDFGenerator"
+  },
+    {
+    name: "Drag And Drop",
+    component: DragAndDrop,
+    path: "/dragAndDrop"
   }
 ];
 
