@@ -19,8 +19,7 @@ import Virtualisation from "./Virtualisation/index";
 import ProgressPattern from "./ProgressPattern/index";
 import PDFGenerator from "./ReactPdf/index";
 import DragAndDrop from "./DragAndDrop/index";
-
-
+import InfniteScrolling from "./InfniteScroll/index";
 
 const components = [
   { name: "CryptoExchanger", component: CryptoExchanger, path: "/crypto" },
@@ -53,18 +52,23 @@ const components = [
   {
     name: "Progress Pattern",
     component: ProgressPattern,
-    path: "/progressPattern"
+    path: "/progressPattern",
   },
-   {
+  {
     name: "PDF Generator",
     component: PDFGenerator,
-    path: "/pDFGenerator"
+    path: "/pDFGenerator",
   },
-    {
+  {
     name: "Drag And Drop",
     component: DragAndDrop,
-    path: "/dragAndDrop"
-  }
+    path: "/dragAndDrop",
+  },
+  {
+    name: "InfniteScrolling",
+    component: InfniteScrolling,
+    path: "/infniteScrolling",
+  },
 ];
 
 function Layout() {
